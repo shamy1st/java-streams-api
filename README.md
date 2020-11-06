@@ -137,43 +137,43 @@ print inside
 
 ### Collectors
 
-collect to List
+* **collect to List**
 
         movies.stream()
             .filter(movie -> movie.getLikes() > 10)
             .collect(Collectors.toList());
 
-collect to Set
+* **collect to Set**
 
         movies.stream()
             .filter(movie -> movie.getLikes() > 10)
             .collect(Collectors.toSet());
 
-collect to Map
+* **collect to Map**
 
         movies.stream()
             .filter(movie -> movie.getLikes() > 10)
             .collect(Collectors.toMap(Movie::getName, Movie::getLikes));
 
-sum of movies likes in Integer
+* **sum of movies likes in Integer**
 
         movies.stream()
             .filter(movie -> movie.getLikes() > 10)
             .collect(Collectors.summingInt(Movie::getLikes));
 
-sum of movies likes in Double
+* **sum of movies likes in Double**
 
         movies.stream()
             .filter(movie -> movie.getLikes() > 10)
             .collect(Collectors.summingDouble(Movie::getLikes));
 
-statistics on movies likes (count, sum, min, max, average)
+* **statistics on movies likes (count, sum, min, max, average)**
 
         movies.stream()
             .filter(movie -> movie.getLikes() > 10)
-            .collect(Collectors.summarizingInt(Movie::getLikes));
+            .collect(Collectors.summarizingInt(Movie::getLikes)); //summarizingDouble, summarizingLong
 
-join movies names in one string separated by comma
+* **join movies names in one string separated by comma**
 
         movies.stream()
             .map(Movie::getName)
