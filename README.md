@@ -5,7 +5,7 @@
             .filter(movie -> movie.getLikes() > 100)
             .count();
 
-### create
+### Create
 
 1. **from collections**
 
@@ -33,25 +33,39 @@
             .limit(5)
             .forEach(n -> System.out.println(n));
 
-### mapping
+### Mapping
 
-### filtering
+* **map()**
 
-### slicing
+        movies.stream()
+            //here we have stream of movies names
+            .map(movie -> movie.getName())
+            .forEach(name -> System.out.println(name));
 
-### sorting
+* **flatMap()**
 
-### unique
+        Stream<List> stream = Stream.of(List.of(1,2,3), List.of(4,5,6));
+        //merge two lists together
+        stream.flatMap(list -> list.stream())
+            .forEach(n -> System.out.println(n));
 
-### peeking
+### Filtering
 
-### reducers
+### Slicing
 
-### collectors
+### Sorting
 
-### grouping
+### Unique
 
-### partioning
+### Peeking
 
-### primitive type streams
+### Reducers
+
+### Collectors
+
+### Grouping
+
+### Partioning
+
+### Primitive type streams
 
