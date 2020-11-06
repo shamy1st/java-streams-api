@@ -205,8 +205,8 @@ print inside
 ### Partioning
 
 * **Map with two keys (true, false)**
-        * false, List<Movie>
-        * true, List<Movie>
+  * false, List<Movie>
+  * true, List<Movie>
 
         movies.stream()
             .collect(Collectors.partitioningBy(movie -> movie.getLikes()>20));
