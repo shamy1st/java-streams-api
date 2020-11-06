@@ -213,4 +213,15 @@ print inside
 
 ### Primitive type streams
 
+* **range()**
+1 2 3 4
+
+        IntStream.range(1, 5)
+            .forEach(n -> System.out.println(n));
+
+* **rangeClosed()**
+1 2 3 4 5
+
+        IntStream.rangeClosed(1, 5)
+            .forEach(n -> System.out.println(n));
 
