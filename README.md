@@ -1,5 +1,5 @@
 # Streams API
-**Streams API** is the process collection of data in a declarative way (functional way) like SQL queries.
+**Streams API** process collection of data in a declarative way (functional way) like SQL queries.
 
         movies.stream()
             .filter(movie -> movie.getLikes() > 100)
