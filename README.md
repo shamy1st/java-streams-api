@@ -71,19 +71,61 @@ useful in pagination
             .limit(pageSize)
             .forEach(movie -> System.out.println(movie.getName()));
 
+* **takeWhile(predicate)**
+example: 15 20 35 10 50 70 100
+output: 15 20
+
+        movies.stream()
+            .takeWhile(movie -> movie.getLikes() < 30)
+            .forEach(movie -> System.out.println(movie.getName()));
+
+* **dropWhile(predicate)**
+example: 15 20 35 10 50 70 100
+output: 35 10 50 70 100
+
+        movies.stream()
+            .dropWhile(movie -> movie.getLikes() < 30)
+            .forEach(movie -> System.out.println(movie.getName()));
+
 ### Sorting
+you should implement Comparable interface with compareTo() method.
+
+        movies.stream()
+            .sorted(Comparator.comparing(movie -> movie.getName()))
+            //.sorted(Comparator.comparing(movie -> movie.getName()).reversed())
+            .forEach(movie -> System.out.println(movie.getName()));
 
 ### Unique
+you should override equals & hashcode functions.
+
+        movies.stream()
+            .distinct()
+            .forEach(movie -> System.out.println(movie.getName()));
 
 ### Peeking
+print inside
+
+        movies.stream()
+            .filter(movie -> movie.getLikes() > 10)
+            .peek(movie -> System.out.println("filter: " + movie.getName()))
+            .forEach(movie -> System.out.println(movie.getName()));
 
 ### Reducers
 
+
+
 ### Collectors
+
+
 
 ### Grouping
 
+
+
 ### Partioning
 
+
+
 ### Primitive type streams
+
 
