@@ -7,27 +7,27 @@
 
 ### create
 
-**1. from collections**
+1. **from collections**
 
         ArrayList<Integer> list = new ArrayList<>();
         list.stream()
 
-**2. from array**
+2. **from array**
 
         int[] numbers = {1, 2, 3};
         Arrays.stream(numbers)
 
-**3. from arbitrary number of objects**
+3. **from arbitrary number of objects**
 
         Stream.of(1, 2, 3)
 
-**4. infinite streams**
+4. **infinite streams**
 
         Stream stream = Stream.generate(() -> Math.random());
         stream.limit(5)
                 .forEach(n -> System.out.println(n));
 
-**5. finite streams**
+5. **finite streams**
 
         Stream.iterate(1, n -> n+1)
             .limit(5)
