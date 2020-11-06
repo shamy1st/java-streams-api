@@ -51,7 +51,13 @@
 
 ### Filtering
 
+        movies.stream()
+            .filter(movie -> movie.getLikes() > 10)
+            .forEach(movie -> System.out.println(movie.getName()));
+
 ### Slicing
+
+
 
 ### Sorting
 
