@@ -181,7 +181,26 @@ print inside
 
 ### Grouping
 
+* **Map{Genre, List\<Movie>}**
 
+        movies.stream()
+            .collect(Collectors.groupingBy(Movie::getGenre));
+
+* **Map{Genre, Set\<Movie>}**
+
+        movies.stream()
+            .collect(Collectors.groupingBy(Movie::getGenre), Collectors.toSet());
+
+* **Map{Genre, Count}**
+
+        movies.stream()
+            .collect(Collectors.groupingBy(Movie::getGenre), Collectors.counting());
+
+* **Map{Genre, String}**
+
+        movies.stream()
+            .collect(Collectors.groupingBy(Movie::getGenre)
+                        , Collectors.mapping(Movie::getName, Collectors.joining(",")));
 
 ### Partioning
 
