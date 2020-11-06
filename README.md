@@ -56,8 +56,20 @@
             .forEach(movie -> System.out.println(movie.getName()));
 
 ### Slicing
+useful in pagination
 
+* **limit(n)**
 
+        movies.stream()
+            .limit(pageSize)
+            .forEach(movie -> System.out.println(movie.getName()));
+
+* **skip(n)**
+
+        movies.stream()
+            .skip((currentPage-1) * pageSize)
+            .limit(pageSize)
+            .forEach(movie -> System.out.println(movie.getName()));
 
 ### Sorting
 
