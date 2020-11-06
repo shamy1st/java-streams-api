@@ -112,7 +112,28 @@ print inside
 
 ### Reducers
 
+* **count()**
 
+* **anyMatch(predicate)** true/false - if any element match the condition return true.
+
+* **allMatch(predicate)** true/false - if all elements match the condition return true.
+
+* **noneMatch(predicate)** true/false - if none elements match return true.
+
+* **findFirst()** return the first element in Optional<>
+
+* **findAny()** return any element in the stream.
+
+* **max(comparator)**
+
+* **min(comparator)**
+
+* **reduce(BinaryOperator)**
+
+        movies.stream()
+            .map(movie -> movie.getLikes())
+            .reduce((a,b) -> a+b)// return Optional<Integer> sum
+            .get();
 
 ### Collectors
 
