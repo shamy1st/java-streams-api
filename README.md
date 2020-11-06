@@ -137,7 +137,47 @@ print inside
 
 ### Collectors
 
+collect to List
 
+        movies.stream()
+            .filter(movie -> movie.getLikes() > 10)
+            .collect(Collectors.toList());
+
+collect to Set
+
+        movies.stream()
+            .filter(movie -> movie.getLikes() > 10)
+            .collect(Collectors.toSet());
+
+collect to Map
+
+        movies.stream()
+            .filter(movie -> movie.getLikes() > 10)
+            .collect(Collectors.toMap(Movie::getName, Movie::getLikes));
+
+sum of movies likes in Integer
+
+        movies.stream()
+            .filter(movie -> movie.getLikes() > 10)
+            .collect(Collectors.summingInt(Movie::getLikes));
+
+sum of movies likes in Double
+
+        movies.stream()
+            .filter(movie -> movie.getLikes() > 10)
+            .collect(Collectors.summingDouble(Movie::getLikes));
+
+statistics on movies likes (count, sum, min, max, average)
+
+        movies.stream()
+            .filter(movie -> movie.getLikes() > 10)
+            .collect(Collectors.summarizingInt(Movie::getLikes));
+
+join movies names in one string separated by comma
+
+        movies.stream()
+            .map(Movie::getName)
+            .collect(Collectors.joining(","));
 
 ### Grouping
 
